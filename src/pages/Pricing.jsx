@@ -120,7 +120,7 @@ const Pricing = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative py-12 lg:py-16 flex items-center overflow-hidden">
+      <section className="relative hero-compact flex items-center overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
@@ -180,7 +180,7 @@ const Pricing = () => {
       </section>
 
       {/* Website Services Section */}
-      <section className="py-20 px-4 md:px-6 lg:px-8 bg-muted/30">
+      <section className="section-compact px-4 md:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -325,7 +325,7 @@ const Pricing = () => {
       </section>
 
       {/* Premium Bundles Section */}
-      <section className="py-20 px-4 md:px-6 lg:px-8">
+      <section className="section-compact px-4 md:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -443,7 +443,7 @@ const Pricing = () => {
       </section>
 
       {/* Calendly Booking CTA Section */}
-      <section className="py-20 px-4 md:px-6 lg:px-8 bg-muted/30">
+      <section className="section-compact px-4 md:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">

@@ -152,7 +152,7 @@ const Portfolio = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+      <section className="relative hero-compact flex items-center overflow-hidden pt-20">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -199,7 +199,7 @@ const Portfolio = () => {
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="section-compact px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -293,7 +293,7 @@ const Portfolio = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="section-compact px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Ready to Start Your Project?
