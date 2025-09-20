@@ -72,7 +72,7 @@ const AIAutomation = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative py-12 lg:py-16 flex items-center overflow-hidden">
+      <section className="relative hero-compact flex items-center overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
@@ -125,22 +125,22 @@ const AIAutomation = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-10 bg-white">
+      <section className="section-compact bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <div className="text-center mb-8">
+              <h2 className="text-compact-xl font-bold text-gray-900 mb-4">
                 AI Automation Services
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-compact-base text-gray-600 max-w-2xl mx-auto">
                 We implement AI solutions that automate repetitive tasks, 
                 enhance customer experience, and drive business growth.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {services.map((service, index) => (
-                <Card key={index} className="p-8 hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+                <Card key={index} className="card-compact static-element border-0 shadow-lg">
                   <CardHeader className="pb-4">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0">
@@ -175,22 +175,22 @@ const AIAutomation = () => {
       </section>
 
       {/* Tools Section */}
-      <section className="py-10 bg-gray-50">
+      <section className="section-tight bg-gray-50">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <div className="text-center mb-8">
+              <h2 className="text-compact-xl font-bold text-gray-900 mb-4">
                 AI Tools & Platforms We Use
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-compact-base text-gray-600 max-w-2xl mx-auto">
                 We work with the latest AI technologies and platforms to ensure 
                 your automation solutions are cutting-edge and future-proof.
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-3">
               {tools.map((tool, index) => (
-                <Badge key={index} variant="secondary" className="px-6 py-3 text-lg bg-white border-2 border-gray-200 hover:border-purple-300 hover:bg-purple-50 transition-all duration-300">
+                <Badge key={index} variant="secondary" className="px-4 py-2 text-sm bg-white border-2 border-gray-200 static-element">
                   {tool}
                 </Badge>
               ))}
@@ -200,7 +200,7 @@ const AIAutomation = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-10 bg-white">
+      <section className="section-compact bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -229,7 +229,7 @@ const AIAutomation = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-12 bg-gradient-to-r from-purple-600 to-pink-600">
+      <section className="section-compact bg-gradient-to-r from-purple-600 to-pink-600">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto text-center text-white">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">

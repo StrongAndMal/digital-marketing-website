@@ -147,3 +147,51 @@ All colors MUST be HSL.
 .animate-ticker {
   animation: ticker 40s linear infinite;
 }
+
+/* Global Spacing Utilities for Better Screen Utilization */
+@layer utilities {
+  /* Compact section spacing */
+  .section-compact {
+    @apply py-8 lg:py-12;
+  }
+  
+  .section-tight {
+    @apply py-6 lg:py-8;
+  }
+  
+  .section-minimal {
+    @apply py-4 lg:py-6;
+  }
+  
+  /* Compact hero sections */
+  .hero-compact {
+    @apply py-12 lg:py-16;
+  }
+  
+  /* Smaller text sizes for better density */
+  .text-compact-xl {
+    @apply text-2xl lg:text-3xl;
+  }
+  
+  .text-compact-lg {
+    @apply text-xl lg:text-2xl;
+  }
+  
+  .text-compact-base {
+    @apply text-base lg:text-lg;
+  }
+  
+  /* Compact card padding */
+  .card-compact {
+    @apply p-4 lg:p-6;
+  }
+  
+  /* Remove hover effects for static elements */
+  .static-element {
+    @apply transition-none;
+  }
+  
+  .static-element:hover {
+    @apply transform-none shadow-none;
+  }
+}

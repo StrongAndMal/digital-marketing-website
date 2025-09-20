@@ -121,7 +121,7 @@ export default function About() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+      <section className="relative hero-compact flex items-center overflow-hidden pt-20">
         {/* Background Image - Fixed Position */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
