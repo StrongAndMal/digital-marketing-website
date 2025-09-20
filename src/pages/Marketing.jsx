@@ -72,7 +72,7 @@ const Marketing = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative py-16 lg:py-20 flex items-center overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
@@ -92,32 +92,32 @@ const Marketing = () => {
         </div>
         
         <div className="relative z-10 container mx-auto px-4 lg:px-8">
-          <div className="max-w-5xl mx-auto text-center">
-            <div className="mb-8">
-              <Badge className="bg-red-100 text-red-800 hover:bg-red-100 px-6 py-2 text-lg font-medium">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-4">
+              <Badge className="bg-red-100 text-red-800 hover:bg-red-100 px-4 py-1 text-sm font-medium">
                 Digital Marketing
               </Badge>
             </div>
             
-            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold text-gray-900 mb-8 leading-tight">
+            <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 leading-tight">
               Drive{" "}
-              <span className="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
                 More Traffic
               </span>{" "}
               & Sales
             </h1>
             
-            <p className="text-2xl lg:text-3xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg lg:text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
               Our data-driven marketing strategies help you reach the right customers, 
               at the right time, with the right message.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-10 py-5 text-xl rounded-full shadow-2xl hover:shadow-red-500/25 transition-all duration-300">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg rounded-full shadow-2xl hover:shadow-red-500/25 transition-all duration-300">
                 Get Your Free Audit
-                <ArrowRight className="ml-3 h-6 w-6" />
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-red-600 text-red-600 hover:bg-red-50 px-10 py-5 text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-red-600 px-8 py-3 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                 View Case Studies
               </Button>
             </div>
@@ -126,20 +126,20 @@ const Marketing = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                 Our Marketing Services
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 We offer comprehensive digital marketing services designed to 
                 grow your business and maximize your return on investment.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {services.map((service, index) => (
                 <Card key={index} className="p-8 hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
                   <CardHeader className="pb-4">

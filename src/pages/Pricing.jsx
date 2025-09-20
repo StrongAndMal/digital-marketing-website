@@ -131,14 +131,14 @@ const Pricing = () => {
           {/* Color Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 to-teal-900/70"></div>
         </div>
-        
+
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-10 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
           <div className="absolute top-40 right-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
           <div className="absolute -bottom-8 left-20 w-72 h-72 bg-teal-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
         </div>
-        
+
         <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <div className="max-w-5xl mx-auto text-center">
             <div className="mb-8">
@@ -146,25 +146,32 @@ const Pricing = () => {
                 Transparent Pricing
               </Badge>
             </div>
-            
+
             <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold text-gray-900 mb-8 leading-tight">
               Transparent{" "}
               <span className="bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
                 Pricing
               </span>
             </h1>
-            
+
             <p className="text-2xl lg:text-3xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Choose the perfect package for your business needs. All our pricing is transparent 
-              with no hidden fees.
+              Choose the perfect package for your business needs. All our
+              pricing is transparent with no hidden fees.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-10 py-5 text-xl rounded-full shadow-2xl hover:shadow-green-500/25 transition-all duration-300">
+              <Button
+                size="lg"
+                className="bg-green-600 hover:bg-green-700 text-white px-10 py-5 text-xl rounded-full shadow-2xl hover:shadow-green-500/25 transition-all duration-300"
+              >
                 Get Started Today
                 <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-green-600 text-green-600 hover:bg-green-50 px-10 py-5 text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-green-600 text-green-600 hover:bg-green-50 px-10 py-5 text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+              >
                 View All Services
               </Button>
             </div>
