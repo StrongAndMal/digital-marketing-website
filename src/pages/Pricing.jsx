@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { PricingCard } from "@/components/PricingCard";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import {
   createStripeCheckout,
