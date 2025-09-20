@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
+import TechnologyIcon from "@/components/TechnologyIcon";
 
 const Portfolio = () => {
   const projects = [
@@ -280,9 +281,10 @@ const Portfolio = () => {
 
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, index) => (
-                      <Badge key={index} variant="outline" className="text-xs">
-                        {tech}
-                      </Badge>
+                      <div key={index} className="flex items-center space-x-1 px-2 py-1 bg-gray-100 border border-gray-200 rounded-full">
+                        <TechnologyIcon name={tech} className="w-3 h-3" />
+                        <span className="text-xs font-medium text-gray-700">{tech}</span>
+                      </div>
                     ))}
                   </div>
                 </CardContent>

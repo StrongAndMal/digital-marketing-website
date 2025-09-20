@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Code, Smartphone, Search, Zap, Shield, ArrowRight, Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import TechnologyIcon from "@/components/TechnologyIcon";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const WebDevelopment = () => {
@@ -183,11 +184,12 @@ const WebDevelopment = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap justify-center gap-4">
               {technologies.map((tech, index) => (
-                <Badge key={index} variant="secondary" className="px-4 py-2 text-sm bg-white border-2 border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-300">
-                  {tech}
-                </Badge>
+                <div key={index} className="flex items-center space-x-2 px-4 py-2 bg-white border-2 border-gray-200 rounded-full static-element">
+                  <TechnologyIcon name={tech} className="w-5 h-5" />
+                  <span className="text-sm font-medium text-gray-700">{tech}</span>
+                </div>
               ))}
             </div>
           </div>

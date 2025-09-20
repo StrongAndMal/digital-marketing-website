@@ -40,7 +40,7 @@ const Services = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative py-12 lg:py-16 flex items-center overflow-hidden">
+      <section className="relative hero-compact flex items-center overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
@@ -62,7 +62,7 @@ const Services = () => {
         <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <div className="max-w-5xl mx-auto text-center">
             <div className="mb-8">
-              <Badge className="bg-indigo-100 text-indigo-800 hover:bg-indigo-100 px-6 py-2 text-lg font-medium">
+              <Badge className="bg-indigo-100 text-indigo-800 px-4 py-1 text-sm font-medium static-element">
                 Our Services
               </Badge>
             </div>
@@ -80,11 +80,11 @@ const Services = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-5 text-xl rounded-full shadow-2xl hover:shadow-indigo-500/25 transition-all duration-300">
+              <Button size="lg" className="bg-indigo-600 text-white px-8 py-3 text-lg rounded-full shadow-lg static-element">
                 View Pricing
                 <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-10 py-5 text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button size="lg" variant="outline" className="border-2 border-indigo-600 text-indigo-600 px-8 py-3 text-lg rounded-full shadow-lg static-element">
                 Get Free Consultation
               </Button>
             </div>
@@ -93,7 +93,7 @@ const Services = () => {
       </section>
 
       {/* Main Services Section */}
-      <section className="py-10 bg-white">
+      <section className="section-compact bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -108,9 +108,9 @@ const Services = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {mainServices.map((service, index) => (
-                <Card key={index} className="p-8 hover:shadow-xl transition-all duration-300 border-0 shadow-lg group">
+                <Card key={index} className="card-compact static-element border-0 shadow-lg">
                   <CardHeader className="pb-4 text-center">
-                    <div className="mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <div className="mx-auto mb-6 static-element">
                       {service.icon}
                     </div>
                     <CardTitle className="text-2xl text-gray-900 mb-4">{service.title}</CardTitle>
@@ -129,7 +129,7 @@ const Services = () => {
                     </div>
                     <Button 
                       asChild 
-                      className={`w-full bg-${service.color}-600 hover:bg-${service.color}-700 text-white`}
+                      className={`w-full bg-${service.color}-600 text-white static-element`}
                     >
                       <Link to={service.link}>
                         Learn More
@@ -145,7 +145,7 @@ const Services = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="section-compact bg-gray-50">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -193,7 +193,7 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="section-compact bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
@@ -203,11 +203,11 @@ const Services = () => {
               Let's discuss your project and create a custom solution that drives results for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg rounded-full">
+              <Button size="lg" className="bg-white text-blue-600 px-6 py-3 text-base rounded-full static-element">
                 View Pricing
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg rounded-full">
+              <Button size="lg" variant="outline" className="border-2 border-white text-white px-6 py-3 text-base rounded-full static-element">
                 Get Free Consultation
               </Button>
             </div>
