@@ -184,7 +184,7 @@ const WebDevelopment = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-6 animate-ticker">
+            <div className="flex justify-center gap-8 animate-ticker-short">
               {technologies.map((tech, index) => (
                 <TechnologyIcon key={index} name={tech} className="w-8 h-8" />
               ))}

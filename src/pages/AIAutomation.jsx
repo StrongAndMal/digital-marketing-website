@@ -189,7 +189,7 @@ const AIAutomation = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-6 animate-ticker">
+            <div className="flex justify-center gap-8 animate-ticker-short">
               {tools.map((tool, index) => (
                 <TechnologyIcon key={index} name={tool} className="w-8 h-8" />
               ))}

@@ -144,8 +144,23 @@ All colors MUST be HSL.
   }
 }
 
+@keyframes ticker-short {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .animate-ticker {
-  animation: ticker 40s linear infinite;
+  animation: ticker 20s linear infinite;
+}
+
+.animate-ticker-short {
+  animation: ticker-short 15s linear infinite;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 /* Global Spacing Utilities for Better Screen Utilization */

@@ -281,7 +281,11 @@ const Portfolio = () => {
 
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, index) => (
-                      <TechnologyIcon key={index} name={tech} className="w-5 h-5" />
+                      <TechnologyIcon
+                        key={index}
+                        name={tech}
+                        className="w-5 h-5"
+                      />
                     ))}
                   </div>
                 </CardContent>

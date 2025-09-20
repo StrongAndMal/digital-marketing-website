@@ -266,9 +266,13 @@ const Marketing = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-6 animate-ticker">
+            <div className="flex justify-center gap-8 animate-ticker-short">
               {platforms.map((platform, index) => (
-                <TechnologyIcon key={index} name={platform} className="w-8 h-8" />
+                <TechnologyIcon
+                  key={index}
+                  name={platform}
+                  className="w-8 h-8"
+                />
               ))}
             </div>
           </div>
