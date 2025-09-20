@@ -23,14 +23,14 @@ const Index = () => {
       {/* 2. PROBLEM - What we solve */}
       <ProblemSection />
       
-      {/* 3. SOLUTION PREVIEW - Quick service overview */}
+      {/* 3. STATS - Social proof numbers */}
+      <CTAStats backgroundImage={heroBg} overlayColor="orange" />
+      
+      {/* 4. SOLUTION PREVIEW - Quick service overview */}
       <SolutionPreview />
       
-      {/* 4. SOCIAL PROOF - Trusted companies */}
+      {/* 5. SOCIAL PROOF - Trusted companies */}
       <TrustedCompanies backgroundImage={heroBg} overlayColor="purple" />
-      
-      {/* 5. STATS - Social proof numbers */}
-      <CTAStats backgroundImage={heroBg} overlayColor="orange" />
       
       {/* 6. CTA - Contact/Quote */}
       <ContactForm />

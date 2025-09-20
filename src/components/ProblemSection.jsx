@@ -80,30 +80,6 @@ export const ProblemSection = () => {
             </a>
           </div>
 
-          {/* Second CTA - Solutions Preview */}
-          <div className="mt-12 text-center bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-4">
-              We create solutions that people love
-            </h3>
-            <p className="text-lg mb-6 opacity-90">
-              From custom websites to AI-powered marketing campaigns, we build complete digital ecosystems 
-              that generate leads, increase sales, and grow your business.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/services"
-                className="inline-block bg-white text-purple-600 font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                View Our Solutions
-              </a>
-              <a
-                href="/portfolio"
-                className="inline-block border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-purple-600 transition-all duration-300"
-              >
-                See Our Work
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </section>
