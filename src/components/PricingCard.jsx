@@ -69,7 +69,12 @@ export const PricingCard = ({
         </div>
 
         {exampleLink && (
-          <Button variant="outline" className="w-full" asChild></Button>
+          <Button variant="outline" className="w-full" asChild>
+            <a href={exampleLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+              View Example
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </Button>
         )}
 
         <div className="mt-auto">
