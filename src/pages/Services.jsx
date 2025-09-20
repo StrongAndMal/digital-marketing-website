@@ -40,7 +40,7 @@ const Services = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative py-12 lg:py-16 flex items-center overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
@@ -93,7 +93,7 @@ const Services = () => {
       </section>
 
       {/* Main Services Section */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">

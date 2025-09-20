@@ -100,7 +100,7 @@ const WhyUs = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 overflow-hidden">
+      <section className="relative py-12 lg:py-16 flex items-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -151,7 +151,7 @@ const WhyUs = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -169,7 +169,7 @@ const WhyUs = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -216,7 +216,7 @@ const WhyUs = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <ProcessTree />
@@ -225,7 +225,7 @@ const WhyUs = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
+      <section className="py-10 bg-gradient-to-br from-purple-50 to-blue-50">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -285,7 +285,7 @@ const WhyUs = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="py-12 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">

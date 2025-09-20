@@ -29,7 +29,7 @@ export const Hero = ({
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden pt-20"
+      className="relative py-16 lg:py-20 flex items-center overflow-hidden pt-20"
     >
       {/* Background Image - Fixed Position */}
       <div

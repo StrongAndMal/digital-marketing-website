@@ -72,7 +72,7 @@ const AIAutomation = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative py-12 lg:py-16 flex items-center overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
@@ -125,7 +125,7 @@ const AIAutomation = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -175,7 +175,7 @@ const AIAutomation = () => {
       </section>
 
       {/* Tools Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -200,7 +200,7 @@ const AIAutomation = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -229,7 +229,7 @@ const AIAutomation = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-pink-600">
+      <section className="py-12 bg-gradient-to-r from-purple-600 to-pink-600">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto text-center text-white">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
