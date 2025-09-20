@@ -191,9 +191,7 @@ const AIAutomation = () => {
 
             <div className="flex flex-wrap justify-center gap-6 animate-ticker">
               {tools.map((tool, index) => (
-                <div key={index} className="flex items-center justify-center w-16 h-16 bg-white border-2 border-gray-200 rounded-full static-element shadow-lg">
-                  <TechnologyIcon name={tool} className="w-8 h-8" />
-                </div>
+                <TechnologyIcon key={index} name={tool} className="w-8 h-8" />
               ))}
             </div>
           </div>
