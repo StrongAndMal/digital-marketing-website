@@ -117,11 +117,6 @@ export const CTAStats = ({
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Main Headline */}
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-12">
-            We create solutions that people love
-          </h2>
-
           {/* Statistics Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {stats.map((stat, index) => {

@@ -83,7 +83,7 @@ export const ProblemSection = () => {
           {/* Second CTA - Solutions Preview */}
           <div className="mt-12 text-center bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl lg:text-3xl font-bold mb-4">
-              We Create Solutions That Drive Real Results
+              We create solutions that people love
             </h3>
             <p className="text-lg mb-6 opacity-90">
               From custom websites to AI-powered marketing campaigns, we build complete digital ecosystems 
