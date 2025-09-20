@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Code, Smartphone, Search, Zap, Shield, ArrowRight, Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const WebDevelopment = () => {
   const features = [
@@ -73,9 +74,20 @@ const WebDevelopment = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-blue-100 to-purple-100 overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+          style={{
+            backgroundImage: `url(${heroBg})`,
+          }}
+        >
+          {/* Color Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-purple-900/70"></div>
+        </div>
+        
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
           <div className="absolute top-40 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
           <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
