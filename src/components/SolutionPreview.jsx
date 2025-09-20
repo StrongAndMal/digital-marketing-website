@@ -1,6 +1,4 @@
-import { CheckCircle, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { CheckCircle } from "lucide-react";
 
 export const SolutionPreview = () => {
   const solutions = [
@@ -84,28 +82,6 @@ export const SolutionPreview = () => {
               These aren't just numbers. They're real results from real businesses 
               that trusted us with their digital transformation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-purple-600 hover:bg-gray-100 font-bold px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                asChild
-              >
-                <Link to="/services">
-                  View All Services
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-purple-600 font-bold px-8 py-4 text-lg rounded-full transition-all duration-300"
-                asChild
-              >
-                <Link to="/portfolio">
-                  See Our Work
-                </Link>
-              </Button>
-            </div>
           </div>
         </div>
       </div>
