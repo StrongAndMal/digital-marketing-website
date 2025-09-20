@@ -69,17 +69,7 @@ export const Navigation = () => {
         { name: "AI Automation", href: "/ai-automation", description: "Intelligent business automation" }
       ]
     },
-    { name: "Pricing", href: "/pricing" },
-    { 
-      name: "About", 
-      href: "/about",
-      dropdown: [
-        { name: "Our Story", href: "/about#story", description: "How we started" },
-        { name: "Our Team", href: "/about#team", description: "Meet the experts" },
-        { name: "Our Process", href: "/about#process", description: "How we work" },
-        { name: "Why Choose Us", href: "/about#why-us", description: "What makes us different" }
-      ]
-    },
+    { name: "About", href: "/about" },
     { 
       name: "Portfolio", 
       href: "/portfolio",
@@ -90,7 +80,8 @@ export const Navigation = () => {
         { name: "Case Studies", href: "/portfolio#case-studies", description: "Detailed project breakdowns" }
       ]
     },
-    { name: "Contact", href: "/contact" },
+    { name: "Why Us", href: "/why-us" },
+    { name: "Pricing", href: "/pricing" },
   ];
 
   const handleMenuToggle = () => {
