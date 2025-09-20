@@ -64,10 +64,10 @@ export const Navigation = () => {
       name: "Services", 
       href: "/services",
       dropdown: [
-        { name: "Web Development", href: "/services#web-development", description: "Custom websites that convert" },
-        { name: "SEO Optimization", href: "/services#seo", description: "Dominate search results" },
-        { name: "Digital Marketing", href: "/services#marketing", description: "AI-powered campaigns" },
-        { name: "Branding & Design", href: "/services#branding", description: "Professional brand identity" }
+        { name: "Web Development", href: "/web-development", description: "Custom websites that convert" },
+        { name: "Digital Marketing", href: "/marketing", description: "AI-powered campaigns" },
+        { name: "AI Automation", href: "/ai-automation", description: "Intelligent business automation" },
+        { name: "Pricing", href: "/pricing", description: "Transparent pricing packages" }
       ]
     },
     { 

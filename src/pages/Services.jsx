@@ -1,410 +1,186 @@
-import React, { useState, useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { PricingCard } from "@/components/PricingCard";
-import { ServiceCard } from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
-import {
-  createStripeCheckout,
-  getPricing,
-  formatTierName,
-} from "@/utils/paymentUtils";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { CheckCircle, Code, Target, Bot, ArrowRight, Star, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
-  const [isYearly, setIsYearly] = useState(false);
-
-  const handleStripePayment = async (tier) => {
-    console.log(`Stripe payment for ${tier}`);
-
-    // Direct Stripe URLs for website tiers
-    if (tier === "starter") {
-      if (isYearly) {
-        window.open("https://buy.stripe.com/7sY8wQ2dy82b3Qu4vBdEs06", "_blank");
-      } else {
-        window.open("https://buy.stripe.com/eVqcN6dWggyHdr46DJdEs00", "_blank");
-      }
-      return;
+  const mainServices = [
+    {
+      icon: <Code className="h-12 w-12 text-blue-500" />,
+      title: "Web Design & Development",
+      description: "Custom websites that convert visitors into customers",
+      features: ["Responsive Design", "SEO Optimization", "Fast Loading", "Mobile-First"],
+      link: "/web-development",
+      color: "blue"
+    },
+    {
+      icon: <Target className="h-12 w-12 text-red-500" />,
+      title: "Digital Marketing",
+      description: "Data-driven campaigns that drive traffic and sales",
+      features: ["SEO", "Google Ads", "Social Media", "Email Marketing"],
+      link: "/marketing",
+      color: "red"
+    },
+    {
+      icon: <Bot className="h-12 w-12 text-purple-500" />,
+      title: "AI Automation",
+      description: "Intelligent systems that work 24/7 for your business",
+      features: ["Chatbots", "Marketing Automation", "Data Analysis", "Content Generation"],
+      link: "/ai-automation",
+      color: "purple"
     }
-
-    if (tier === "professional") {
-      if (isYearly) {
-        window.open("https://buy.stripe.com/bJe6oIaK46Y75YC5zFdEs07", "_blank");
-      } else {
-        window.open("https://buy.stripe.com/28E4gA5pK4PZ5YCgejdEs01", "_blank");
-      }
-      return;
-    }
-
-    if (tier === "enterprise") {
-      if (isYearly) {
-        window.open("https://buy.stripe.com/3cI5kE5pK96f4Uy5zFdEs08", "_blank");
-      } else {
-        window.open("https://buy.stripe.com/4gMcN67xS4PZdr41jpdEs02", "_blank");
-      }
-      return;
-    }
-
-    if (tier === "local-business") {
-      window.open("https://buy.stripe.com/00w6oI3hC0zJ9aOd27dEs03", "_blank");
-      return;
-    }
-
-    if (tier === "ecommerce-complete") {
-      window.open("https://buy.stripe.com/fZu28sdWg2HR72G0fldEs04", "_blank");
-      return;
-    }
-
-    if (tier === "digital-empire") {
-      window.open("https://buy.stripe.com/6oU3cw5pK6Y772G2ntdEs05", "_blank");
-      return;
-    }
-
-    const pricing = getPricing();
-    const tierPricing = pricing[tier];
-
-    if (!tierPricing) {
-      console.error("Invalid tier:", tier);
-      alert("Invalid package selected. Please try again.");
-      return;
-    }
-
-    const amount = isYearly ? tierPricing.yearly : tierPricing.monthly;
-    const billing = isYearly ? "yearly" : "monthly";
-
-    // Show loading state
-    const button = event.target;
-    const originalText = button.textContent;
-    button.textContent = "Processing...";
-    button.disabled = true;
-
-    try {
-      await createStripeCheckout(tier, billing, amount);
-    } catch (error) {
-      console.error("Stripe payment error:", error);
-      alert("Payment failed. Please try again.");
-    } finally {
-      // Reset button state
-      button.textContent = originalText;
-      button.disabled = false;
-    }
-  };
-
-  const handleServicePurchase = (service) => {
-    console.log(`Purchase ${service}`);
-    // TODO: Implement service purchase flow
-  };
-
-  // Load Calendly widget
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.head.appendChild(script);
-
-    return () => {
-      // Cleanup script on component unmount
-      const existingScript = document.querySelector(
-        'script[src="https://assets.calendly.com/assets/external/widget.js"]'
-      );
-      if (existingScript) {
-        document.head.removeChild(existingScript);
-      }
-    };
-  }, []);
+  ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
 
       {/* Hero Section */}
-
-      {/* Website Services Section */}
-      <section className="py-20 px-4 md:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Professional Website Design & Development
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Complete website solutions with SEO optimization, domain setup,
-              and ongoing maintenance
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+              Our <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Services</span>
+            </h1>
+            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              We offer comprehensive digital solutions to help your business grow and succeed online. 
+              From custom websites to AI automation, we've got you covered.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-full">
+                View Pricing
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button size="lg" variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg rounded-full">
+                Get Free Consultation
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Modern Billing Toggle */}
-            <div className="flex items-center justify-center gap-6 mb-8">
-              <div className="flex items-center space-x-4">
-                <span
-                  className={`text-lg font-semibold transition-colors duration-300 ${
-                    !isYearly ? "text-primary" : "text-muted-foreground"
-                  }`}
-                >
-                  Monthly
-                </span>
+      {/* Main Services Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                What We Do
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                We specialize in three core areas that work together to create 
+                a complete digital ecosystem for your business.
+              </p>
+            </div>
 
-                {/* Modern Toggle Switch */}
-                <div className="relative">
-                  <button
-                    onClick={() => setIsYearly(!isYearly)}
-                    className={`relative inline-flex h-10 w-20 items-center rounded-full transition-all duration-500 ease-in-out focus:outline-none focus:ring-4 focus:ring-primary/20 ${
-                      isYearly
-                        ? "bg-gradient-to-r from-green-500 to-emerald-600"
-                        : "bg-gray-300"
-                    }`}
-                  >
-                    <span
-                      className={`inline-block h-8 w-8 transform rounded-full bg-white shadow-lg transition-all duration-500 ease-in-out ${
-                        isYearly ? "translate-x-11" : "translate-x-1"
-                      }`}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {mainServices.map((service, index) => (
+                <Card key={index} className="p-8 hover:shadow-xl transition-all duration-300 border-0 shadow-lg group">
+                  <CardHeader className="pb-4 text-center">
+                    <div className="mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                      {service.icon}
+                    </div>
+                    <CardTitle className="text-2xl text-gray-900 mb-4">{service.title}</CardTitle>
+                    <CardDescription className="text-gray-600 text-lg">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3 mb-8">
+                      {service.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center space-x-3">
+                          <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                          <span className="text-gray-700">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Button 
+                      asChild 
+                      className={`w-full bg-${service.color}-600 hover:bg-${service.color}-700 text-white`}
                     >
-                      {/* Ticker Effect - Rotating Icon */}
-                      <div className="flex items-center justify-center h-full">
-                        <span
-                          className={`text-lg transition-transform duration-500 ${
-                            isYearly ? "rotate-180" : "rotate-0"
-                          }`}
-                        >
-                          {isYearly ? "💰" : "📅"}
-                        </span>
-                      </div>
-                    </span>
-                  </button>
-                </div>
-
-                <span
-                  className={`text-lg font-semibold transition-colors duration-300 ${
-                    isYearly ? "text-primary" : "text-muted-foreground"
-                  }`}
-                >
-                  Annual
-                </span>
-              </div>
-
-              {/* Savings Badge with Animation */}
-              {isYearly && (
-                <div className="relative">
-                  <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse">
-                    Save up to 50%! 🎉
-                  </div>
-                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-bounce"></div>
-                </div>
-              )}
+                      <Link to={service.link}>
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <PricingCard
-              title="Starter Website"
-              price="497"
-              originalPrice="697"
-              yearlyPrice="4,470"
-              yearlyOriginalPrice="5,964"
-              description="Perfect for small businesses and startups who need a solid online presence. Built using WordPress and a reliable cloud hosting service."
-              features={[
-                "5-page responsive website",
-                "Custom domain setup (domain registration included if needed)",
-                "SSL certificate & basic security setup",
-                "Mobile-responsive design",
-                "Basic SEO setup (meta tags, page titles)",
-                "Contact forms & lead capture setup",
-                "1 month post-launch support for updates & troubleshooting",
-                "Email support & basic guidance for content management",
-              ]}
-              exampleLink="https://example-starter.com"
-              isYearly={isYearly}
-              onStripeClick={() => handleStripePayment("starter")}
-              savings=" $514 with annual billing"
-            />
-
-            <PricingCard
-              title="Professional Website"
-              price="847"
-              originalPrice="1,397"
-              yearlyPrice="8,970"
-              yearlyOriginalPrice="11,964"
-              description="A more complete solution for businesses ready to scale online. Built using WordPress and a reliable cloud hosting service."
-              features={[
-                "Everything in Starter Website",
-                "Up to 10 pages, including a blog or news section",
-                "Basic e-commerce setup (product catalog, payment integration via Stripe/PayPal)",
-                "Google Analytics setup & basic reporting",
-                "Social media integration (links, share buttons, feeds if simple)",
-                "3 months post-launch support",
-                "Email support & guidance for content and updates",
-              ]}
-              isPreferred={true}
-              exampleLink="https://example-professional.com"
-              isYearly={isYearly}
-              onStripeClick={() => handleStripePayment("professional")}
-              savings=" $1,134 with annual billing"
-            />
-
-            <PricingCard
-              title="Enterprise Website"
-              price="1,247"
-              originalPrice="1,997"
-              yearlyPrice="13,470"
-              yearlyOriginalPrice="17,964"
-              description="For growing businesses needing more complex or tailored online solutions. Built using WordPress and a reliable cloud hosting service."
-              features={[
-                "Everything in Professional Website",
-                "Up to 20 pages or custom landing pages",
-                "Advanced e-commerce options (up to 50 products, simple coupon/discount setup)",
-                "Simple custom integrations (embedding forms, newsletters, or other third-party tools)",
-                "Monthly maintenance for 6 months (updates, security checks)",
-                "Priority email support",
-                "Optional training for internal team",
-              ]}
-              exampleLink="https://example-enterprise.com"
-              isYearly={isYearly}
-              onStripeClick={() => handleStripePayment("enterprise")}
-              savings="$1,494 with annual billing"
-            />
           </div>
         </div>
       </section>
 
-      {/* Premium Bundles Section */}
-      <section className="py-20 px-4 md:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Complete Web Development + Marketing Bundles
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Full-service packages including website design, development, SEO,
-              and digital marketing
-            </p>
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Why Choose DigitalMal?
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                We combine technical expertise with creative design to deliver 
+                results that matter to your business.
+              </p>
+            </div>
 
-            {/* Bundle Pricing Note */}
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-800 px-6 py-3 rounded-full text-sm font-medium">
-                <span className="text-lg">🚀</span>
-                <span>
-                  Premium monthly packages - Complete AI-powered digital
-                  transformation
-                </span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Star className="h-8 w-8 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Proven Results</h3>
+                <p className="text-gray-600">300% average traffic increase for our clients</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Zap className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Fast Delivery</h3>
+                <p className="text-gray-600">Quick turnaround without compromising quality</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="h-8 w-8 text-purple-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Ongoing Support</h3>
+                <p className="text-gray-600">We're here for you long after launch</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Target className="h-8 w-8 text-red-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">ROI Focused</h3>
+                <p className="text-gray-600">Every solution designed to drive business growth</p>
               </div>
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ServiceCard
-              title="Local Business Complete Package"
-              price="997"
-              monthlyPrice="997"
-              yearlyPrice="9,470"
-              yearlyOriginalPrice="11,964"
-              description="Complete digital presence for local businesses, built using WordPress and cloud hosting."
-              features={[
-                "Professional 10-page website design & development",
-                "Custom domain & hosting setup",
-                "Local SEO setup & Google My Business optimization",
-                "Contact forms & lead capture",
-                "Basic email marketing setup (Mailchimp, etc.)",
-                "Social media integration & guidance (posting templates & scheduling)",
-                "Monthly performance report & 1 strategy call",
-                "1-month post-launch support for updates",
-              ]}
-              benefits={[
-                "Save over $2,000 vs buying services individually",
-                "Complete local business online presence",
-                "Easy-to-manage automation templates for marketing",
-                "Dedicated point of contact for support",
-                "Realistic growth & ranking improvement guidance",
-              ]}
-              onStripeClick={() => handleStripePayment("local-business")}
-              isBundle={true}
-              isYearly={isYearly}
-              savings="Save $1,494 with annual billing"
-            />
-
-            <ServiceCard
-              title="E-commerce Complete Package"
-              price="1,497"
-              monthlyPrice="1,497"
-              yearlyPrice="13,470"
-              yearlyOriginalPrice="17,964"
-              description="Full e-commerce setup for small to medium online stores using WordPress + WooCommerce."
-              features={[
-                "Complete e-commerce website design & development",
-                "Product catalog setup (up to 50 products)",
-                "Payment integration (Stripe/PayPal)",
-                "Basic SEO optimization & shopping feed setup",
-                "Email marketing setup with automated campaigns",
-                "Social media integration & posting guidance",
-                "Monthly performance report & 1 strategy call",
-                "2 months post-launch support for updates & troubleshooting",
-              ]}
-              benefits={[
-                "Save over $3,000 vs separate services",
-                "Complete online store ready to sell",
-                "Easy-to-manage marketing automations",
-                "Dedicated support for setup & troubleshooting",
-                "Measurable ROI potential with realistic marketing guidance",
-              ]}
-              onStripeClick={() => handleStripePayment("ecommerce-complete")}
-              isBundle={true}
-              isYearly={isYearly}
-              savings="Save $1,494 with annual billing"
-            />
-
-            <ServiceCard
-              title="Complete Digital Empire Package"
-              price="2,497"
-              monthlyPrice="2,497"
-              yearlyPrice="22,470"
-              yearlyOriginalPrice="29,964"
-              description="The ultimate solution for businesses looking for a professional, managed digital presence."
-              features={[
-                "Enterprise-level WordPress website with up to 20 pages",
-                "Brand identity guidance & visual design support",
-                "Advanced SEO & blog content guidance",
-                "Email marketing automation setup",
-                "Social media content strategy & scheduling templates",
-                "Monthly analytics report & 2 strategy calls",
-                "3 months post-launch maintenance & support",
-                "Optional training for internal teams on managing website & marketing",
-              ]}
-              benefits={[
-                "Save $5,000+ vs separate services",
-                "Complete managed online presence",
-                "Streamlined tools for marketing & sales",
-                "Dedicated account support",
-                "Realistic ROI improvement over time",
-              ]}
-              onStripeClick={() => handleStripePayment("digital-empire")}
-              isBundle={true}
-              isYearly={isYearly}
-              savings="Save $2,994 with annual billing"
-            />
           </div>
         </div>
       </section>
 
-      {/* Calendly Booking CTA Section */}
-      <section className="py-20 px-4 md:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Not Sure Which Package Is Right For You?
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Ready to Transform Your Digital Presence?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Let's grab a virtual coffee and discuss your specific needs. I'll
-              help you choose the perfect solution for your business goals.
+            <p className="text-xl mb-8 opacity-90">
+              Let's discuss your project and create a custom solution that drives results for your business.
             </p>
-          </div>
-
-          <div className="text-center">
-            {/* Calendly Widget - Direct Embed */}
-            <div
-              className="calendly-inline-widget mx-auto"
-              data-url="https://calendly.com/mauro-alv290/30min"
-              style={{ minWidth: "320px", height: "700px", width: "100%" }}
-            ></div>
-
-            {/* Primary CTA Button */}
-
-            {/* Benefits of the call */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg rounded-full">
+                View Pricing
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg rounded-full">
+                Get Free Consultation
+              </Button>
+            </div>
           </div>
         </div>
       </section>
