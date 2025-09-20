@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import brandLogo from "../logo/logo_transparent.png";
@@ -8,6 +8,7 @@ export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const location = useLocation();
 
   // Handle scroll detection and navbar visibility
@@ -44,10 +45,51 @@ export const Navigation = () => {
     };
   }, [isMenuOpen]);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (activeDropdown && !event.target.closest('.dropdown-container')) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [activeDropdown]);
+
   const navItems = [
-    { name: "Services", href: "/services" },
-    { name: "About", href: "/about" },
-    { name: "Portfolio", href: "/portfolio" },
+    { 
+      name: "Services", 
+      href: "/services",
+      dropdown: [
+        { name: "Web Development", href: "/services#web-development", description: "Custom websites that convert" },
+        { name: "SEO Optimization", href: "/services#seo", description: "Dominate search results" },
+        { name: "Digital Marketing", href: "/services#marketing", description: "AI-powered campaigns" },
+        { name: "Branding & Design", href: "/services#branding", description: "Professional brand identity" }
+      ]
+    },
+    { 
+      name: "About", 
+      href: "/about",
+      dropdown: [
+        { name: "Our Story", href: "/about#story", description: "How we started" },
+        { name: "Our Team", href: "/about#team", description: "Meet the experts" },
+        { name: "Our Process", href: "/about#process", description: "How we work" },
+        { name: "Why Choose Us", href: "/about#why-us", description: "What makes us different" }
+      ]
+    },
+    { 
+      name: "Portfolio", 
+      href: "/portfolio",
+      dropdown: [
+        { name: "Web Development", href: "/portfolio#websites", description: "Recent website projects" },
+        { name: "SEO Success Stories", href: "/portfolio#seo", description: "Traffic & ranking results" },
+        { name: "Marketing Campaigns", href: "/portfolio#marketing", description: "ROI-driven campaigns" },
+        { name: "Case Studies", href: "/portfolio#case-studies", description: "Detailed project breakdowns" }
+      ]
+    },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -57,6 +99,14 @@ export const Navigation = () => {
 
   const handleMenuClose = () => {
     setIsMenuOpen(false);
+  };
+
+  const handleDropdownToggle = (itemName) => {
+    setActiveDropdown(activeDropdown === itemName ? null : itemName);
+  };
+
+  const handleDropdownClose = () => {
+    setActiveDropdown(null);
   };
 
   return (
@@ -94,16 +144,63 @@ export const Navigation = () => {
                     (item.href.startsWith("/#") && location.pathname === "/");
 
                   return (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className={`text-white hover:text-white transition-colors duration-300 font-medium relative group ${
-                        isActive ? "text-white" : ""
-                      }`}
-                    >
-                      {item.name}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-                    </Link>
+                    <div key={item.name} className="relative group dropdown-container">
+                      {item.dropdown ? (
+                        <button
+                          onClick={() => handleDropdownToggle(item.name)}
+                          className={`text-white hover:text-white transition-colors duration-300 font-medium flex items-center space-x-1 ${
+                            isActive ? "text-white" : ""
+                          }`}
+                        >
+                          <span>{item.name}</span>
+                          <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${
+                            activeDropdown === item.name ? "rotate-180" : ""
+                          }`} />
+                        </button>
+                      ) : (
+                        <Link
+                          to={item.href}
+                          className={`text-white hover:text-white transition-colors duration-300 font-medium relative group ${
+                            isActive ? "text-white" : ""
+                          }`}
+                        >
+                          {item.name}
+                          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                        </Link>
+                      )}
+
+                      {/* Dropdown Menu */}
+                      {item.dropdown && activeDropdown === item.name && (
+                        <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-200 py-4 z-50">
+                          <div className="px-4 py-2 border-b border-gray-100">
+                            <Link
+                              to={item.href}
+                              className="text-gray-900 font-semibold text-lg hover:text-purple-600 transition-colors duration-200"
+                              onClick={handleDropdownClose}
+                            >
+                              View All {item.name}
+                            </Link>
+                          </div>
+                          <div className="py-2">
+                            {item.dropdown.map((dropdownItem, index) => (
+                              <Link
+                                key={index}
+                                to={dropdownItem.href}
+                                className="block px-4 py-3 hover:bg-purple-50 transition-colors duration-200"
+                                onClick={handleDropdownClose}
+                              >
+                                <div className="font-medium text-gray-900 hover:text-purple-600">
+                                  {dropdownItem.name}
+                                </div>
+                                <div className="text-sm text-gray-500 mt-1">
+                                  {dropdownItem.description}
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   );
                 })}
               </div>
@@ -187,18 +284,59 @@ export const Navigation = () => {
                     (item.href.startsWith("/#") && location.pathname === "/");
 
                   return (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      onClick={handleMenuClose}
-                      className={`block py-4 px-4 rounded-lg transition-all duration-300 ${
-                        isActive
-                          ? "bg-white/20 text-white"
-                          : "text-white/90 hover:bg-white/10 hover:text-white"
-                      }`}
-                    >
-                      <span className="text-lg font-medium">{item.name}</span>
-                    </Link>
+                    <div key={item.name}>
+                      {item.dropdown ? (
+                        <div>
+                          <button
+                            onClick={() => handleDropdownToggle(item.name)}
+                            className={`w-full text-left py-4 px-4 rounded-lg transition-all duration-300 flex items-center justify-between ${
+                              isActive
+                                ? "bg-white/20 text-white"
+                                : "text-white/90 hover:bg-white/10 hover:text-white"
+                            }`}
+                          >
+                            <span className="text-lg font-medium">{item.name}</span>
+                            <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${
+                              activeDropdown === item.name ? "rotate-180" : ""
+                            }`} />
+                          </button>
+                          {activeDropdown === item.name && (
+                            <div className="ml-4 mt-2 space-y-2">
+                              <Link
+                                to={item.href}
+                                onClick={handleMenuClose}
+                                className="block py-2 px-4 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
+                              >
+                                View All {item.name}
+                              </Link>
+                              {item.dropdown.map((dropdownItem, dropdownIndex) => (
+                                <Link
+                                  key={dropdownIndex}
+                                  to={dropdownItem.href}
+                                  onClick={handleMenuClose}
+                                  className="block py-2 px-4 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
+                                >
+                                  <div className="font-medium">{dropdownItem.name}</div>
+                                  <div className="text-sm opacity-75">{dropdownItem.description}</div>
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <Link
+                          to={item.href}
+                          onClick={handleMenuClose}
+                          className={`block py-4 px-4 rounded-lg transition-all duration-300 ${
+                            isActive
+                              ? "bg-white/20 text-white"
+                              : "text-white/90 hover:bg-white/10 hover:text-white"
+                          }`}
+                        >
+                          <span className="text-lg font-medium">{item.name}</span>
+                        </Link>
+                      )}
+                    </div>
                   );
                 })}
               </div>

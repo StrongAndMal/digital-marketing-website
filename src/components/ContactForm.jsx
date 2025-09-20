@@ -11,7 +11,7 @@ export const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    service: "",
+    services: [],
     message: "",
   });
 
@@ -26,10 +26,11 @@ export const ContactForm = () => {
     e.preventDefault();
 
     // Basic validation
-    if (!formData.name || !formData.email || !formData.service) {
+    if (!formData.name || !formData.email || formData.services.length === 0) {
       toast({
         title: "Missing Information",
-        description: "Please fill in all required fields.",
+        description:
+          "Please fill in all required fields and select at least one service.",
         variant: "destructive",
       });
       return;
@@ -46,7 +47,7 @@ export const ContactForm = () => {
     setFormData({
       name: "",
       email: "",
-      service: "",
+      services: [],
       message: "",
     });
   };
@@ -56,6 +57,15 @@ export const ContactForm = () => {
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleServiceToggle = (service) => {
+    setFormData((prev) => ({
+      ...prev,
+      services: prev.services.includes(service)
+        ? prev.services.filter((s) => s !== service)
+        : [...prev.services, service],
+    }));
   };
 
   return (
@@ -118,35 +128,35 @@ export const ContactForm = () => {
               {/* Service Selection */}
               <div className="space-y-2">
                 <Label className="text-sm font-semibold text-gray-700">
-                  What service are you interested in? *
+                  What services are you interested in? * (Select all that apply)
                 </Label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-3">
                   {services.map((service) => (
                     <label
                       key={service}
                       className={`flex items-center p-4 rounded-lg border-2 cursor-pointer transition-all duration-200 ${
-                        formData.service === service
+                        formData.services.includes(service)
                           ? "border-purple-500 bg-purple-50"
                           : "border-gray-200 hover:border-gray-300"
                       }`}
                     >
                       <input
-                        type="radio"
-                        name="service"
+                        type="checkbox"
+                        name="services"
                         value={service}
-                        checked={formData.service === service}
-                        onChange={handleChange}
+                        checked={formData.services.includes(service)}
+                        onChange={() => handleServiceToggle(service)}
                         className="sr-only"
                       />
                       <div className="flex items-center space-x-3">
                         <div
-                          className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                            formData.service === service
+                          className={`w-4 h-4 rounded border-2 flex items-center justify-center ${
+                            formData.services.includes(service)
                               ? "border-purple-500 bg-purple-500"
                               : "border-gray-300"
                           }`}
                         >
-                          {formData.service === service && (
+                          {formData.services.includes(service) && (
                             <CheckCircle className="w-3 h-3 text-white" />
                           )}
                         </div>
@@ -157,6 +167,13 @@ export const ContactForm = () => {
                     </label>
                   ))}
                 </div>
+                {formData.services.length > 0 && (
+                  <div className="mt-3 p-3 bg-purple-50 rounded-lg">
+                    <p className="text-sm text-purple-700 font-medium">
+                      Selected: {formData.services.join(", ")}
+                    </p>
+                  </div>
+                )}
               </div>
 
               {/* Message */}

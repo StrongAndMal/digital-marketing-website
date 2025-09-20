@@ -47,10 +47,10 @@ export const Hero = ({
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-4 lg:px-8 flex items-center min-h-screen">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start w-full gap-8 lg:gap-12">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center min-h-screen">
+        <div className="flex flex-col lg:flex-row items-center justify-center w-full gap-8 lg:gap-16 xl:gap-20 max-w-7xl mx-auto">
           {/* Left Side - Image Container */}
-          <div className="flex-shrink-0 order-2 lg:order-1">
+          <div className="flex-shrink-0 order-2 lg:order-1 lg:pl-4 xl:pl-8">
             {leftImage ? (
               <a
                 href="#contact"
@@ -83,9 +83,9 @@ export const Hero = ({
           </div>
 
           {/* Right Side - Text Content */}
-          <div className="flex-1 text-white space-y-6 lg:space-y-8 order-1 lg:order-2 text-center lg:text-left">
+          <div className="flex-1 text-white space-y-6 lg:space-y-8 order-1 lg:order-2 text-center lg:text-left lg:pr-4 xl:pr-8 max-w-2xl lg:max-w-none">
             {/* Headline */}
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight break-words">
               Custom Websites, SEO & AI Tools For{" "}
               <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
                 Business Growth
@@ -93,7 +93,7 @@ export const Hero = ({
             </h1>
 
             {/* Subheadline */}
-            <p className="text-base xs:text-lg sm:text-xl lg:text-2xl text-gray-100 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-base xs:text-lg sm:text-xl lg:text-2xl text-gray-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               From Web Development And Search Engine Optimization To AI
               Automation And Digital Marketing, We Do It All So You Can Scale
               Fast.
