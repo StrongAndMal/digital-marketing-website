@@ -66,10 +66,10 @@ export const Navigation = () => {
       dropdown: [
         { name: "Web Development", href: "/web-development", description: "Custom websites that convert" },
         { name: "Digital Marketing", href: "/marketing", description: "AI-powered campaigns" },
-        { name: "AI Automation", href: "/ai-automation", description: "Intelligent business automation" },
-        { name: "Pricing", href: "/pricing", description: "Transparent pricing packages" }
+        { name: "AI Automation", href: "/ai-automation", description: "Intelligent business automation" }
       ]
     },
+    { name: "Pricing", href: "/pricing" },
     { 
       name: "About", 
       href: "/about",
