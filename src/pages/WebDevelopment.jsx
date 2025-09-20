@@ -73,25 +73,40 @@ const WebDevelopment = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-6 bg-blue-100 text-blue-800 hover:bg-blue-100">
-              Web Design & Development
-            </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Custom Websites That <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Convert</span>
+      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-blue-100 to-purple-100 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
+        </div>
+        
+        <div className="relative z-10 container mx-auto px-4 lg:px-8">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="mb-8">
+              <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100 px-6 py-2 text-lg font-medium">
+                Web Design & Development
+              </Badge>
+            </div>
+            
+            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold text-gray-900 mb-8 leading-tight">
+              Custom Websites That{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Convert
+              </span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            
+            <p className="text-2xl lg:text-3xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed">
               We build professional, mobile-responsive websites that drive traffic, engage visitors, 
-              and convert them into loyal customers. From concept to launch, we handle everything.
+              and convert them into loyal customers.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-full">
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 text-xl rounded-full shadow-2xl hover:shadow-blue-500/25 transition-all duration-300">
                 Get Your Free Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg rounded-full">
+              <Button size="lg" variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-10 py-5 text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                 View Our Work
               </Button>
             </div>

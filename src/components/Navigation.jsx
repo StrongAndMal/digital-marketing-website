@@ -70,16 +70,7 @@ export const Navigation = () => {
       ]
     },
     { name: "About", href: "/about" },
-    { 
-      name: "Portfolio", 
-      href: "/portfolio",
-      dropdown: [
-        { name: "Web Development", href: "/portfolio#websites", description: "Recent website projects" },
-        { name: "SEO Success Stories", href: "/portfolio#seo", description: "Traffic & ranking results" },
-        { name: "Marketing Campaigns", href: "/portfolio#marketing", description: "ROI-driven campaigns" },
-        { name: "Case Studies", href: "/portfolio#case-studies", description: "Detailed project breakdowns" }
-      ]
-    },
+    { name: "Portfolio", href: "/portfolio" },
     { name: "Why Us", href: "/why-us" },
     { name: "Pricing", href: "/pricing" },
   ];
@@ -163,15 +154,6 @@ export const Navigation = () => {
                       {/* Dropdown Menu */}
                       {item.dropdown && activeDropdown === item.name && (
                         <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-200 py-4 z-50">
-                          <div className="px-4 py-2 border-b border-gray-100">
-                            <Link
-                              to={item.href}
-                              className="text-gray-900 font-semibold text-lg hover:text-purple-600 transition-colors duration-200"
-                              onClick={handleDropdownClose}
-                            >
-                              View All {item.name}
-                            </Link>
-                          </div>
                           <div className="py-2">
                             {item.dropdown.map((dropdownItem, index) => (
                               <Link
@@ -293,13 +275,6 @@ export const Navigation = () => {
                           </button>
                           {activeDropdown === item.name && (
                             <div className="ml-4 mt-2 space-y-2">
-                              <Link
-                                to={item.href}
-                                onClick={handleMenuClose}
-                                className="block py-2 px-4 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
-                              >
-                                View All {item.name}
-                              </Link>
                               {item.dropdown.map((dropdownItem, dropdownIndex) => (
                                 <Link
                                   key={dropdownIndex}

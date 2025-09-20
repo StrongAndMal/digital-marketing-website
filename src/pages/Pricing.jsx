@@ -117,16 +117,43 @@ const Pricing = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Transparent <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Pricing</span>
+      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-green-50 via-emerald-50 to-teal-100 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-teal-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
+        </div>
+        
+        <div className="relative z-10 container mx-auto px-4 lg:px-8">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="mb-8">
+              <Badge className="bg-green-100 text-green-800 hover:bg-green-100 px-6 py-2 text-lg font-medium">
+                Transparent Pricing
+              </Badge>
+            </div>
+            
+            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold text-gray-900 mb-8 leading-tight">
+              Transparent{" "}
+              <span className="bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
+                Pricing
+              </span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            
+            <p className="text-2xl lg:text-3xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed">
               Choose the perfect package for your business needs. All our pricing is transparent 
-              with no hidden fees. Get started today and transform your digital presence.
+              with no hidden fees.
             </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-10 py-5 text-xl rounded-full shadow-2xl hover:shadow-green-500/25 transition-all duration-300">
+                Get Started Today
+                <ArrowRight className="ml-3 h-6 w-6" />
+              </Button>
+              <Button size="lg" variant="outline" className="border-2 border-green-600 text-green-600 hover:bg-green-50 px-10 py-5 text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                View All Services
+              </Button>
+            </div>
           </div>
         </div>
       </section>
