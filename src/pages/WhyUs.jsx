@@ -111,7 +111,7 @@ const WhyUs = () => {
         <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <div className="max-w-5xl mx-auto text-center">
             <div className="mb-8">
-              <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100 px-6 py-2 text-lg font-medium">
+              <Badge className="bg-blue-100 text-blue-800 px-4 py-1 text-sm font-medium static-element">
                 Why Choose DigitalMal
               </Badge>
             </div>
@@ -133,7 +133,7 @@ const WhyUs = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button
                 size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 text-xl rounded-full shadow-2xl hover:shadow-blue-500/25 transition-all duration-300"
+                className="bg-blue-600 text-white px-8 py-3 text-lg rounded-full shadow-lg static-element"
               >
                 View Our Work
                 <ArrowRight className="ml-3 h-6 w-6" />
@@ -141,7 +141,7 @@ const WhyUs = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-10 py-5 text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                className="border-2 border-blue-600 text-blue-600 px-8 py-3 text-lg rounded-full shadow-lg static-element"
               >
                 Get Free Consultation
               </Button>
@@ -187,7 +187,7 @@ const WhyUs = () => {
               {benefits.map((benefit, index) => (
                 <Card
                   key={index}
-                  className="p-8 hover:shadow-xl transition-all duration-300 border-0 shadow-lg"
+                  className="card-compact static-element border-0 shadow-lg"
                 >
                   <CardHeader className="pb-4">
                     <div className="flex items-start space-x-4">
@@ -242,7 +242,7 @@ const WhyUs = () => {
               {testimonials.map((testimonial, index) => (
                 <Card
                   key={index}
-                  className="p-8 hover:shadow-xl transition-all duration-300 border-0 shadow-lg"
+                  className="card-compact static-element border-0 shadow-lg"
                 >
                   <CardHeader className="pb-4">
                     <div className="flex items-center space-x-4 mb-4">

@@ -180,7 +180,7 @@ const Portfolio = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-gray-900 hover:bg-gray-100 font-semibold px-8 py-4 text-lg rounded-full"
+                className="bg-white text-gray-900 font-semibold px-6 py-3 text-base rounded-full static-element"
                 asChild
               >
                 <Link to="/services">View Our Services</Link>
@@ -188,7 +188,7 @@ const Portfolio = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-8 py-4 text-lg rounded-full"
+                className="border-white text-white font-semibold px-6 py-3 text-base rounded-full static-element"
                 asChild
               >
                 <Link to="/contact">Start Your Project</Link>
