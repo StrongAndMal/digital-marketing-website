@@ -184,11 +184,10 @@ const WebDevelopment = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-6 animate-ticker">
               {technologies.map((tech, index) => (
-                <div key={index} className="flex items-center space-x-2 px-4 py-2 bg-white border-2 border-gray-200 rounded-full static-element">
-                  <TechnologyIcon name={tech} className="w-5 h-5" />
-                  <span className="text-sm font-medium text-gray-700">{tech}</span>
+                <div key={index} className="flex items-center justify-center w-16 h-16 bg-white border-2 border-gray-200 rounded-full static-element shadow-lg">
+                  <TechnologyIcon name={tech} className="w-8 h-8" />
                 </div>
               ))}
             </div>

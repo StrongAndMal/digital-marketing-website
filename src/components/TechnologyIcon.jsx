@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TechnologyIcon = ({ name, className = "w-6 h-6" }) => {
+const TechnologyIcon = ({ name, className = "w-8 h-8" }) => {
   const iconMap = {
     // Web Development Technologies
     "React & Next.js": "react",
@@ -36,7 +36,19 @@ const TechnologyIcon = ({ name, className = "w-6 h-6" }) => {
     "GSAP": "greensock",
     "Google Maps API": "google",
     "Property API": "apifox", // Using apifox as API icon
-    "HIPAA Compliance": "securityscorecard" // Using securityscorecard as security icon
+    "HIPAA Compliance": "securityscorecard", // Using securityscorecard as security icon
+    
+    // Marketing Platforms
+    "Google Ads": "googleads",
+    "Facebook Ads": "facebook",
+    "Instagram Ads": "instagram",
+    "LinkedIn Ads": "linkedin", // Will use generic if not found
+    "Twitter Ads": "twitter", // Will use generic if not found
+    "TikTok Ads": "tiktok",
+    "YouTube Ads": "youtube",
+    "Google Analytics": "googleanalytics",
+    "Facebook Pixel": "facebook", // Using facebook as fallback
+    "Google Tag Manager": "googletagmanager"
   };
 
   const iconName = iconMap[name] || name.toLowerCase().replace(/\s+/g, '');

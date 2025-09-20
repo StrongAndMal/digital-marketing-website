@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Target, TrendingUp, Users, BarChart3, ArrowRight, Star, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import TechnologyIcon from "@/components/TechnologyIcon";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Marketing = () => {
@@ -72,7 +73,7 @@ const Marketing = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative py-12 lg:py-16 flex items-center overflow-hidden">
+      <section className="relative hero-compact flex items-center overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
@@ -94,7 +95,7 @@ const Marketing = () => {
         <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-4">
-              <Badge className="bg-red-100 text-red-800 hover:bg-red-100 px-4 py-1 text-sm font-medium">
+              <Badge className="bg-red-100 text-red-800 px-4 py-1 text-sm font-medium static-element">
                 Digital Marketing
               </Badge>
             </div>
@@ -113,11 +114,11 @@ const Marketing = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg rounded-full shadow-2xl hover:shadow-red-500/25 transition-all duration-300">
+              <Button size="lg" className="bg-red-600 text-white px-8 py-3 text-lg rounded-full shadow-lg static-element">
                 Get Your Free Audit
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-red-600 px-8 py-3 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button size="lg" variant="outline" className="border-2 border-white text-white px-8 py-3 text-lg rounded-full shadow-lg static-element">
                 View Case Studies
               </Button>
             </div>
@@ -126,7 +127,7 @@ const Marketing = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-10 bg-white">
+      <section className="section-compact bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8">
@@ -141,7 +142,7 @@ const Marketing = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {services.map((service, index) => (
-                <Card key={index} className="p-8 hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+                <Card key={index} className="card-compact static-element border-0 shadow-lg">
                   <CardHeader className="pb-4">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0">
@@ -176,7 +177,7 @@ const Marketing = () => {
       </section>
 
       {/* Platforms Section */}
-      <section className="py-10 bg-gray-50">
+      <section className="section-tight bg-gray-50">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -189,11 +190,11 @@ const Marketing = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-6 animate-ticker">
               {platforms.map((platform, index) => (
-                <Badge key={index} variant="secondary" className="px-6 py-3 text-lg bg-white border-2 border-gray-200 hover:border-red-300 hover:bg-red-50 transition-all duration-300">
-                  {platform}
-                </Badge>
+                <div key={index} className="flex items-center justify-center w-16 h-16 bg-white border-2 border-gray-200 rounded-full static-element shadow-lg">
+                  <TechnologyIcon name={platform} className="w-8 h-8" />
+                </div>
               ))}
             </div>
           </div>
@@ -201,7 +202,7 @@ const Marketing = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-10 bg-white">
+      <section className="section-compact bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -230,7 +231,7 @@ const Marketing = () => {
       </section>
 
       {/* Results Section */}
-      <section className="py-12 bg-gradient-to-r from-red-600 to-orange-600">
+      <section className="section-compact bg-gradient-to-r from-red-600 to-orange-600">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto text-center text-white">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
@@ -255,11 +256,11 @@ const Marketing = () => {
               that trusted us with their digital marketing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 px-8 py-4 text-lg rounded-full">
+              <Button size="lg" className="bg-white text-red-600 px-6 py-3 text-base rounded-full static-element">
                 Start Your Campaign
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-red-600 px-8 py-4 text-lg rounded-full">
+              <Button size="lg" variant="outline" className="border-2 border-white text-white px-6 py-3 text-base rounded-full static-element">
                 View Case Studies
               </Button>
             </div>

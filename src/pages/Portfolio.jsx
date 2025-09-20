@@ -281,9 +281,11 @@ const Portfolio = () => {
 
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, index) => (
-                      <div key={index} className="flex items-center space-x-1 px-2 py-1 bg-gray-100 border border-gray-200 rounded-full">
-                        <TechnologyIcon name={tech} className="w-3 h-3" />
-                        <span className="text-xs font-medium text-gray-700">{tech}</span>
+                      <div
+                        key={index}
+                        className="flex items-center justify-center w-8 h-8 bg-gray-100 border border-gray-200 rounded-full static-element"
+                      >
+                        <TechnologyIcon name={tech} className="w-5 h-5" />
                       </div>
                     ))}
                   </div>
